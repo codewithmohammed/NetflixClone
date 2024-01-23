@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../utils/dimensions.dart';
+import '../../../utils/dimensions/dimensions.dart';
 
 class OnboardingDesign extends StatelessWidget {
   const OnboardingDesign({

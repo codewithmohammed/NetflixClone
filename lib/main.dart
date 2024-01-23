@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflixclone/features/main/presentation/main_screen.dart';
 import 'package:netflixclone/features/home/presentation/home_screen.dart';
 import 'package:netflixclone/presentation/onboarding/onboarding_screen.dart';
 import 'package:netflixclone/presentation/onboarding/widgets/appbar_indicator.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightMode,
       darkTheme: darkMode,
-      home: const OnBoardingScreen(),
+      home:  MainScreen(),
     );
   }
 }
