@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:netflixclone/presentation/onboarding/appbar_indicator.dart';
+import 'package:netflixclone/presentation/onboarding/widgets/appbar_indicator.dart';
 import 'package:netflixclone/utils/image_path.dart';
 import 'widgets/onboarding_style.dart';
 
@@ -37,7 +37,7 @@ class OnBoardingScreen extends StatelessWidget {
             ),
           ],
         ),
-        // const AppBarAndIndicator()
+        const AppBarAndIndicator()
       ]),
     );
   }
