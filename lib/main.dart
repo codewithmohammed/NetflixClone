@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflixclone/features/home/presentation/home_screen.dart';
+import 'package:netflixclone/presentation/onboarding/onboarding_screen.dart';
+import 'package:netflixclone/presentation/onboarding/widgets/appbar_indicator.dart';
 import 'package:netflixclone/presentation/splash/splash_screen.dart';
 import 'package:netflixclone/presentation/themes/app_theme.dart';
 
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightMode,
       darkTheme: darkMode,
-      home: const SplashScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
