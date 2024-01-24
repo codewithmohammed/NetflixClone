@@ -10,4 +10,5 @@ class AppColors {
   static const Color white = Color.fromARGB(255, 255, 255, 255);
   static const Color greylight1 = Color.fromARGB(255, 178, 178, 178);
   static const Color greylight3 = Color.fromARGB(255, 230, 230, 230);
+    static const Color blueButtonColor = Color.fromARGB(255, 0, 132, 255);
 }

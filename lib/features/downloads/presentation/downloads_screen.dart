@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflixclone/features/downloads/presentation/widgets/download_image.dart';
 import 'package:netflixclone/utils/colors/colors.dart';
@@ -88,6 +87,40 @@ class DownloadScreen extends StatelessWidget {
                   height: 0.25,
                 ),
               ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 80),
+              height: 45,
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.blueButtonColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                child: const Text('Set Up',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              height: 45,
+              padding: const EdgeInsets.symmetric(horizontal: 70),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                child: const Text('See what you can download',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700,color: AppColors.darkgrey),),
+              ),
             )
           ],
         ),

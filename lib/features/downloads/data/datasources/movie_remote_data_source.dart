@@ -1,7 +1,5 @@
-import 'dart:convert';
+
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
-import 'package:netflixclone/features/downloads/data/models/download_movie_model.dart';
 import 'package:netflixclone/infrastructure/network/api_client.dart';
 
 class DownloadMovieProvider {

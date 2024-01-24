@@ -13,9 +13,6 @@ class DownloadMovieRepository {
 
       final decodedData = json.decode(downloadMovieData)['downloadimages'] as List;
 
-      // if (decodedData['cod'] != '200') {
-      //   throw 'An unexpected error occured';
-      // }
       return decodedData.map((movie) => DownloadMovieModel.fromJson(movie)).toList();
 
     } catch (e) {
