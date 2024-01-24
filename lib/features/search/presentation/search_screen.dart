@@ -25,7 +25,7 @@ class SearchScreen extends StatelessWidget {
           children: [
             SearchTextField(searchController: searchController),
             Container(
-              margin: const EdgeInsets.only(top: 12, bottom: 12),
+              margin: const EdgeInsets.only(top: 12, bottom: 5),
               child: BlocBuilder<SearchBloc, SearchState>(
                 builder: (context, state) {
                   if (state is SearchingState) {
@@ -52,7 +52,6 @@ class SearchScreen extends StatelessWidget {
 
                 if (state is SearchingState) {
                   final data = state.searchingMovieModel;
-
                   return SearchGridView(data: data);
                 }
                 if (state is! SearchSuccess) {
@@ -60,7 +59,6 @@ class SearchScreen extends StatelessWidget {
                       child: CircularProgressIndicator.adaptive());
                 }
                 final data = state.searchMovieModel;
-
                 return SearchListView(data: data);
               },
             )),

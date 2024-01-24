@@ -43,13 +43,13 @@ class SearchListView extends StatelessWidget {
                       ),
                     )),
                 const CircleAvatar(
-                  radius: 19,
+                  radius: 20,
                   child: CircleAvatar(
-                    radius: 17,
+                    radius: 16,
                     backgroundColor: Colors.black,
                     child: Icon(
                       Icons.play_arrow,
-                      size: 20,
+                      size: 30,
                       color: Colors.white,
                     ),
                   ),

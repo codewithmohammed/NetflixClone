@@ -6,11 +6,11 @@ class SearchMovieRepository {
   final SearchMovieProvider searchMovieProvider;
   SearchMovieRepository(this.searchMovieProvider);
 
-  Future<List<SearchMovieModel>> getSearchMovie() async {
+  Future<List<SearchMovieModel>> getSearchMovie({required String apiClient,required String result}) async {
     try {
-      final searchMovieData = await searchMovieProvider.getSearchMovies();
+      final searchMovieData = await searchMovieProvider.getSearchMovies(apiClient);
       //  print(searchMovieData);
-      final decodedData = json.decode(searchMovieData)['searchmovies'] as List;
+      final decodedData = json.decode(searchMovieData)[result] as List;
      
       return decodedData
           .map((movie) => SearchMovieModel.fromJson(movie))

@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflixclone/features/search/data/models/search_movie_model.dart';
 import 'package:netflixclone/features/search/data/repositories/search_movie_repository.dart';
+import 'package:netflixclone/infrastructure/network/api_client.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';
@@ -16,10 +17,12 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       FetchMovieRequested event, Emitter<SearchState> emit) async {
     emit(SearchLoading());
     try {
-      final searchMovie = await searchMovieRepository.getSearchMovie();
+
       if (event.searchText.trim().isNotEmpty) {
+         final searchMovie = await searchMovieRepository.getSearchMovie(apiClient: ApiClient.searchMovies,result: 'searchmovies');
         emit(SearchingState(searchingMovieModel: searchMovie));
       } else {
+         final searchMovie = await searchMovieRepository.getSearchMovie(apiClient: ApiClient.afterSearching,result: 'aftersearching');
         emit(SearchSuccess(searchMovieModel: searchMovie));
       }
     } catch (e) {
