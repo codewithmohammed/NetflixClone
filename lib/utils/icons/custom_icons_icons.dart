@@ -49,33 +49,33 @@ class CustomIcons {
       IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vector__4_ =
       IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_play =
+  static const IconData play =
       IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_pause =
+  static const IconData pause =
       IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_mirror =
+  static const IconData mirror =
       IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_skip_forward =
+  static const IconData skip_forward =
       IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_skip_backward =
+  static const IconData skip_backward =
       IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_brightness =
+  static const IconData brightness =
       IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_user =
+  static const IconData user =
       IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_close =
+  static const IconData close =
       IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_info =
+  static const IconData info =
       IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_error =
+  static const IconData error =
       IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_speed =
+  static const IconData speed =
       IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_lock_closed =
+  static const IconData lock_closed =
       IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_lock_open =
+  static const IconData lock_open =
       IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData name_subtitles =
+  static const IconData subtitles =
       IconData(0xe815, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData plus =
       IconData(0xf303, fontFamily: _kFontFam, fontPackage: _kFontPkg);

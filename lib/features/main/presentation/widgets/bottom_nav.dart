@@ -20,7 +20,7 @@ class BottomNavigation extends StatelessWidget {
           },
           showUnselectedLabels: true,
           showSelectedLabels: true,
-          unselectedItemColor: AppColors.neutralgrey,
+          unselectedItemColor: AppColors.grey,
           selectedItemColor: AppColors.neutralgreylight,
           items: const [
             BottomNavigationBarItem(
