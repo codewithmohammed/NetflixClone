@@ -60,15 +60,13 @@ class DownloadScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: AppColors.darkgrey),
                 ),
-                SizedBox(
-                  child: DownloadImage(
-                    cWidth: cWidth,
-                    angle: -15,
-                    margin: const EdgeInsets.only(right: 200, top: 45),
-                    index: 0,
-                    width: 0.17,
-                    height: 0.23,
-                  ),
+                DownloadImage(
+                  cWidth: cWidth,
+                  angle: -15,
+                  margin: const EdgeInsets.only(right: 200, top: 45),
+                  index: 0,
+                  width: 0.17,
+                  height: 0.23,
                 ),
                 DownloadImage(
                   cWidth: cWidth,

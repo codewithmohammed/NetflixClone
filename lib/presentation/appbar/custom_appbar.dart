@@ -10,25 +10,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          kWidth,
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
-            ),
+    return Row(
+      children: [
+        kWidth,
+        Expanded(
+          child: Text(
+            title,
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
           ),
-          const Icon(
-            CustomIcons.mirror,
-            size: 30,
-          ),
-          kWidth,
-          const Icon(CustomIcons.user),
-          kWidth,
-        ],
-      ),
+        ),
+        const Icon(
+          CustomIcons.mirror,
+          size: 30,
+        ),
+        kWidth,
+        const Icon(CustomIcons.user),
+        kWidth,
+      ],
     );
   }
 

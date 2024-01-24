@@ -7,7 +7,6 @@ import 'package:netflixclone/features/downloads/presentation/bloc/download_bloc.
 class DownloadImage extends StatefulWidget {
   const DownloadImage({
     super.key,
-    // required this.snapshot,
     required this.cWidth,
     required this.angle,
     required this.margin,
@@ -28,13 +27,8 @@ class DownloadImage extends StatefulWidget {
 
 class _DownloadImageState extends State<DownloadImage> {
   @override
-  void initState() {
-    super.initState();
-    context.read<DownloadBloc>().add(FetchMovieRequested());
-  }
-
-  @override
   Widget build(BuildContext context) {
+    context.read<DownloadBloc>().add(FetchMovieRequested());
     return Container(
         margin: widget.margin,
         child: Transform.rotate(

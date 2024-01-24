@@ -1,18 +1,19 @@
 
-import 'package:http/http.dart' as http;
+import 'package:netflixclone/core/provider/movie_provider.dart';
 import 'package:netflixclone/infrastructure/network/api_client.dart';
 
 class DownloadMovieProvider {
   Future<String> getDownloadMovies() async {
     try {
-      final response = await http.get(Uri.parse(ApiClient.nowPlayingUrl));
+      return MovieProvider.getMovies(ApiClient.downloadPageUrl);
+      // final response = await http.get(Uri.parse(movieType));
 
-      if (response.statusCode == 200) {
-        return response.body;
+      // if (response.statusCode == 200) {
+      //   return response.body;
      
-      } else {
-        throw 'An error occured';
-      }
+      // } else {
+      //   throw 'An error occured';
+      // }
     } catch (e) {
       throw e.toString();
     }

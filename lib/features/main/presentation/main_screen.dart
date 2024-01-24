@@ -6,8 +6,8 @@ import 'package:netflixclone/features/main/presentation/widgets/bottom_nav.dart'
 import 'package:netflixclone/features/main/presentation/widgets/pages.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
-  
+  const MainScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
