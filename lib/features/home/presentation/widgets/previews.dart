@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:netflixclone/core/constants/constants.dart';
+import 'package:netflixclone/features/home/data/models/home_model.dart';
 import 'package:netflixclone/features/home/presentation/widgets/text_view.dart';
 
 class Previews extends StatelessWidget {
   const Previews({
     super.key,
+    required this.movieModel,
   });
+
+  final List<HomeMovieModel> movieModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +27,7 @@ class Previews extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
             itemBuilder: (context, index) {
+              final currentData = movieModel[index];
               return GestureDetector(
                 onTap: () {},
                 child: Stack(
@@ -34,9 +40,9 @@ class Previews extends StatelessWidget {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.red, width: 4),
-                          image: const DecorationImage(
+                          image:  DecorationImage(
                               image: NetworkImage(
-                                  'https://source.unsplash.com/random/400x400'))),
+                                  '${Constants.imagePath}${currentData.backdropPath}'),fit: BoxFit.cover)),
                     ),
                     Container(
                       height: 130,
@@ -74,4 +80,3 @@ class Previews extends StatelessWidget {
     );
   }
 }
-

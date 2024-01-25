@@ -82,10 +82,12 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ContentHeader(
             index: 1,
           )),
-          const SliverPadding(
-            padding: EdgeInsets.only(top: 20.0),
+          SliverPadding(
+            padding: const EdgeInsets.only(top: 20.0),
             sliver: SliverToBoxAdapter(
-              child: Previews(),
+              child: Previews(
+                movieModel: state.firstMovieModel,
+              ),
             ),
           ),
           SliverToBoxAdapter(
@@ -99,15 +101,16 @@ class _HomeScreenState extends State<HomeScreen> {
               movieMode: state.firstMovieModel,
             ),
           ),
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: ContentWidget(
               mainHead: 'Tense Dramas',
               movieMode: state.fourthMovieModel,
             ),
           ),
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: ContentWidget(
-              mainHead: 'South Indian Cinemas', movieMode: state.fifthMovieModel,
+              mainHead: 'South Indian Cinemas',
+              movieMode: state.fifthMovieModel,
             ),
           ),
         ]);
