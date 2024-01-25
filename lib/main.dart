@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:netflixclone/features/downloads/data/datasources/download_movie_data_source.dart';
 import 'package:netflixclone/features/downloads/data/repositories/download_movie_repository.dart';
 import 'package:netflixclone/features/downloads/presentation/bloc/download_bloc.dart';
+import 'package:netflixclone/features/home/data/datasource/home_data_souce.dart';
+import 'package:netflixclone/features/home/data/repository/home_repository.dart';
+import 'package:netflixclone/features/home/presentation/bloc/home_bloc.dart';
+
 import 'package:netflixclone/features/main/presentation/main_screen.dart';
-import 'package:netflixclone/features/home/presentation/home_screen.dart';
+
 import 'package:netflixclone/features/search/data/datasources/search_movie_data_source.dart';
 import 'package:netflixclone/features/search/data/repositories/search_movie_repository.dart';
 import 'package:netflixclone/features/search/presentation/bloc/search_bloc.dart';
-import 'package:netflixclone/presentation/onboarding/onboarding_screen.dart';
-import 'package:netflixclone/presentation/onboarding/widgets/appbar_indicator.dart';
-import 'package:netflixclone/presentation/splash/splash_screen.dart';
+
 import 'package:netflixclone/presentation/themes/app_theme.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,6 +34,9 @@ class MyApp extends StatelessWidget {
         RepositoryProvider(
           create: (context) => SearchMovieRepository(SearchMovieProvider()),
         ),
+        RepositoryProvider(
+          create: (context) => HomeMovieRepository(HomeMovieProvider()),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -43,12 +48,18 @@ class MyApp extends StatelessWidget {
             create: (context) =>
                 SearchBloc(context.read<SearchMovieRepository>()),
           ),
+          BlocProvider<HomeBloc>(
+              create: (context) =>
+                  HomeBloc(context.read<HomeMovieRepository>())),
+          BlocProvider(
+            create: (context) => ScrollBloc(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: lightMode,
           darkTheme: darkMode,
-          home: MainScreen(),
+          home: const MainScreen(),
         ),
       ),
     );

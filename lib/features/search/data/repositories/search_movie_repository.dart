@@ -13,7 +13,7 @@ class SearchMovieRepository {
           await searchMovieProvider.getSearchMovies(apiClient);
       //  print(searchMovieData);
       final decodedData = json.decode(searchMovieData)[result] as List;
-      print(decodedData);
+      // print(decodedData);
      
           
       // print('$hello'+'ki');

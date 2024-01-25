@@ -6,14 +6,6 @@ class DownloadMovieProvider {
   Future<String> getDownloadMovies() async {
     try {
       return MovieProvider.getMovies(ApiClient.downloadPageUrl);
-      // final response = await http.get(Uri.parse(movieType));
-
-      // if (response.statusCode == 200) {
-      //   return response.body;
-     
-      // } else {
-      //   throw 'An error occured';
-      // }
     } catch (e) {
       throw e.toString();
     }

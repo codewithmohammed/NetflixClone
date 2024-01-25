@@ -20,7 +20,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       if (event.searchText.trim().isNotEmpty) {
         final searchMovie = await searchMovieRepository.getSearchMovie(
             apiClient: ApiClient.searchMovies, result: 'searchmovies');
-        print(searchMovie);
+        // print(searchMovie);
         emit(SearchingState(searchingMovieModel: searchMovie));
       } else {
         final searchMovie = await searchMovieRepository.getSearchMovie(

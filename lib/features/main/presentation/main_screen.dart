@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflixclone/features/downloads/presentation/downloads_screen.dart';
-import 'package:netflixclone/features/fastlaugh/presentation/fast_laugh_screen.dart';
-import 'package:netflixclone/features/home/presentation/home_screen.dart';
 import 'package:netflixclone/features/main/presentation/widgets/bottom_nav.dart';
 import 'package:netflixclone/features/main/presentation/widgets/pages.dart';
 

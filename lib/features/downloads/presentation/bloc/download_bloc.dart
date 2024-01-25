@@ -15,7 +15,7 @@ class DownloadBloc extends Bloc<DownloadEvent, DownloadState> {
       FetchMovieRequested event, Emitter<DownloadState> emit) async {
     emit(DownloadLoading());
     try {
-      final downloadMovie = await downloadMovieRepository.getDownloadMovie();
+      final downloadMovie = await downloadMovieRepository.getDownloadMovies();
       emit(DownloadSuccess(downloadMovieModel: downloadMovie));
     } catch (e) {
       emit(DownloadFailure(e.toString()));

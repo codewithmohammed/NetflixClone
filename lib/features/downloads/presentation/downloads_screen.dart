@@ -15,7 +15,10 @@ class DownloadScreen extends StatelessWidget {
       appBar: const PreferredSize(
           preferredSize: Size(double.maxFinite, 50),
           child: CustomAppBar(
-            title: 'Downloads',
+            leading: Text(
+              'Downloads',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
+            ),
           )),
       body: SafeArea(
         child: ListView(
@@ -100,7 +103,10 @@ class DownloadScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
-                child: const Text('Set Up',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                child: const Text(
+                  'Set Up',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                ),
               ),
             ),
             Container(
@@ -117,7 +123,13 @@ class DownloadScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
-                child: const Text('See what you can download',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700,color: AppColors.darkgrey),),
+                child: const Text(
+                  'See what you can download',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.darkgrey),
+                ),
               ),
             )
           ],
