@@ -17,12 +17,15 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       FetchMovieRequested event, Emitter<SearchState> emit) async {
     emit(SearchLoading());
     try {
-
       if (event.searchText.trim().isNotEmpty) {
-         final searchMovie = await searchMovieRepository.getSearchMovie(apiClient: ApiClient.searchMovies,result: 'searchmovies');
+        final searchMovie = await searchMovieRepository.getSearchMovie(
+            apiClient: ApiClient.searchMovies, result: 'searchmovies');
+        print(searchMovie);
         emit(SearchingState(searchingMovieModel: searchMovie));
       } else {
-         final searchMovie = await searchMovieRepository.getSearchMovie(apiClient: ApiClient.afterSearching,result: 'aftersearching');
+        final searchMovie = await searchMovieRepository.getSearchMovie(
+            apiClient: ApiClient.searchMovies, result: 'searchmovies');
+        // print(searchMovie);
         emit(SearchSuccess(searchMovieModel: searchMovie));
       }
     } catch (e) {
