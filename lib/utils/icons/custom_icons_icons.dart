@@ -45,7 +45,7 @@ class CustomIcons {
       IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData likeIcon =
       IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData vector_2__stroke_ =
+  static const IconData share =
       IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vector__4_ =
       IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);

@@ -3,30 +3,33 @@ import 'package:netflixclone/utils/icons/custom_icons_icons.dart';
 
 import '../../utils/widgets/constant_widgets.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.leading});
-
-  final Widget leading;
-
+class CustomAppBar extends StatelessWidget  {
+  const CustomAppBar(
+      {super.key, required this.leadingText, required this.bottom});
+  final String leadingText;
+  final PreferredSizeWidget? bottom;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        kWidth,
-        Expanded(
-          child: leading
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      leadingWidth: 200,
+      leading: Container(
+        margin: const EdgeInsets.only(top: 10),
+        child: Text(
+          leadingText,
+          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
         ),
-        const Icon(
+      ),
+      actions: const [
+        Icon(
           CustomIcons.mirror,
           size: 30,
         ),
         kWidth,
-        const Icon(CustomIcons.user),
+        Icon(CustomIcons.user),
         kWidth,
       ],
+      bottom: bottom,
     );
   }
-
-  @override
-  Size get preferredSize => const Size(double.maxFinite, 0);
 }

@@ -70,14 +70,13 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         }
         if (state is HomeMovieFailure) {
-          return Container(
-            child: Text(state.error),
-          );
+          return Text(state.error);
         }
         if (state is! HomeMovieSuccess) {
           return Container();
         }
-        return CustomScrollView(controller: scrollController, slivers: [
+        return CustomScrollView(controller: scrollController,
+         slivers: [
           const SliverToBoxAdapter(
               child: ContentHeader(
             index: 1,

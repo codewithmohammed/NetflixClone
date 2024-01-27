@@ -14,11 +14,8 @@ class DownloadScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size(double.maxFinite, 50),
-          child: CustomAppBar(
-            leading: Text(
-              'Downloads',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
-            ),
+          child: CustomAppBar(leadingText: 'Downloads', bottom: null,
+         
           )),
       body: SafeArea(
         child: ListView(

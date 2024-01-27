@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:netflixclone/core/constants/constants.dart';
 import 'package:netflixclone/features/home/presentation/widgets/appbar_button.dart';
+import 'package:netflixclone/utils/image/image_path.dart';
 
 class HomeCustomAppBar extends StatelessWidget {
   const HomeCustomAppBar({super.key, this.scrollOffset = 0});
@@ -11,7 +13,7 @@ class HomeCustomAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
       color:
-          Colors.black.withOpacity((scrollOffset / 350).clamp(0, 1).toDouble()),
+          Colors.black.withOpacity((scrollOffset / 400).clamp(0, 1).toDouble()),
       child: const CustomAppBarM(),
     );
   }
@@ -26,7 +28,7 @@ class CustomAppBarM extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset('assets/images/netflixLogo/netflix.png'),
+        Image.asset(ImagePaths.netflix),
         const SizedBox(width: 12.0),
         Expanded(
           child: Row(

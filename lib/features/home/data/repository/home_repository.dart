@@ -1,9 +1,7 @@
 import 'dart:convert';
-
-import 'package:netflixclone/core/provider/movie_provider.dart';
 import 'package:netflixclone/features/home/data/datasource/home_data_souce.dart';
 import 'package:netflixclone/features/home/data/models/home_model.dart';
-import 'package:netflixclone/infrastructure/network/api_client.dart';
+
 
 class HomeMovieRepository {
   final HomeMovieProvider homeMovieProvider;

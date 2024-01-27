@@ -10,7 +10,7 @@ class DownloadMovieRepository {
   Future<List<DownloadMovieModel>> getDownloadMovies() async {
     try {
       final downloadMovieData = await downloadMovieProvider.getDownloadMovies();
-      final decodedData = json.decode(downloadMovieData)['downloadimages'] as List;
+      final decodedData = json.decode(downloadMovieData)['results'] as List;
       return decodedData.map((movie) => DownloadMovieModel.fromJson(movie)).toList();
     } catch (e) {
       throw e.toString();

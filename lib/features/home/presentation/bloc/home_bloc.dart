@@ -20,15 +20,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(HomeLoading());
     try {
          final firsthomeMovie = await homeMovieRepository.getmoviesfor(
-          'searchmovies', ApiClient.searchMovies);
+          'results', ApiClient.searchMovies);
       final secondhomeMovie = await homeMovieRepository.getmoviesfor(
-          'homemovie2', ApiClient.homeMovie2);
+          'results', ApiClient.downloadPageUrl);
       // final thirdhomeMovie = await homeMovieRepository.getmoviesfor(
       //     'newandhot', ApiClient.newandhot);
       final fourthhomeMovie = await homeMovieRepository.getmoviesfor(
-          'newandhot2', ApiClient.newandhot2);
+          'results', ApiClient.newandhot2);
       final fifthhomeMovie = await homeMovieRepository.getmoviesfor(
-          'searchmovies', ApiClient.searchMovies);
+          'results', ApiClient.homeMovie1);
       // final sixthhomeMovie = await homeMovieRepository.getmoviesfor(
       //     'toprated', ApiClient.topRatedTvSeriesUrl);
 

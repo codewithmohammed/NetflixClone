@@ -25,7 +25,7 @@ class ContentHeader extends StatelessWidget {
               );
             }
             if (state is HomeMovieFailure) {
-              return Container(
+              return Center(
                 child: Text(state.error),
               );
             }
