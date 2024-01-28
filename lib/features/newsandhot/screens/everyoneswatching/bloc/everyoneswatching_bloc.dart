@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflixclone/features/newsandhot/data/models/newsandhot_movie_model.dart';
 import 'package:netflixclone/features/newsandhot/data/repositories/newsandhot_movie_repository.dart';
@@ -21,6 +20,12 @@ class EveryoneswatchingBloc
     try {
       final newsandhotMovie = await newsAndHotMovieRepository
           .getNewsAndHotMovies(ApiClient.searchMovies);
+      // print(newsandhotMovie[1].id);
+      // List<String> linkOfAllModels = [];
+      // for (var model in newsandhotMovie) {
+      //   linkOfAllModels.add();
+      // }
+      // print(linkOfAllModels);
       emit(EveryoneswatchingMovieIsLoaded(
           newsandhotMovieModel: newsandhotMovie));
     } catch (e) {

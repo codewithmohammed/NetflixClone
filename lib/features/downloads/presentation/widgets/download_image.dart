@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflixclone/core/constants/constants.dart';
 import 'package:netflixclone/features/downloads/presentation/bloc/download_bloc.dart';
 
-class DownloadImage extends StatefulWidget {
+class DownloadImage extends StatelessWidget {
   const DownloadImage({
     super.key,
     required this.cWidth,
@@ -22,17 +22,12 @@ class DownloadImage extends StatefulWidget {
   final double height;
 
   @override
-  State<DownloadImage> createState() => _DownloadImageState();
-}
-
-class _DownloadImageState extends State<DownloadImage> {
-  @override
   Widget build(BuildContext context) {
     context.read<DownloadBloc>().add(FetchMovieRequested());
     return Container(
-        margin: widget.margin,
+        margin: margin,
         child: Transform.rotate(
-            angle: widget.angle * pi / 180,
+            angle: angle * pi / 180,
             child: BlocBuilder<DownloadBloc, DownloadState>(
               builder: (context, state) {
                 if (state is DownloadLoading) {
@@ -45,10 +40,10 @@ class _DownloadImageState extends State<DownloadImage> {
                   return const CircularProgressIndicator.adaptive();
                 }
                 final data = state.downloadMovieModel;
-                final posterPath = data[widget.index].posterPath;
+                final posterPath = data[index].posterPath;
                 return Container(
-                  width: widget.cWidth * widget.width,
-                  height: widget.cWidth * widget.height,
+                  width: cWidth * width,
+                  height: cWidth * height,
                   clipBehavior: Clip.antiAlias,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
