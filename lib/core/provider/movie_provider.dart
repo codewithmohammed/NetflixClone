@@ -30,7 +30,7 @@ class MovieProvider {
         throw 'An error occurred with status code: ${response.statusCode}';
       }
     } catch (e) {
-      print('Exception caught: $e');
+      // print('Exception caught: $e');
       throw e.toString();
     }
   }
