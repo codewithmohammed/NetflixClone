@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:netflixclone/features/fastlaugh/presentation/widgets/icon_with_title_shadow.dart';
 import 'package:netflixclone/utils/icons/custom_icons_icons.dart';
@@ -25,26 +27,36 @@ class _VideoListItemsState extends State<VideoListItems> {
     super.initState();
     final videoID = YoutubePlayer.convertUrlToId('https://www.youtube.com/watch?v=${widget.ytkey}');
     _videocontroller = YoutubePlayerController(
+      
         initialVideoId: videoID!,
-        flags: const YoutubePlayerFlags(autoPlay: false));
+        flags: const YoutubePlayerFlags(autoPlay: true,disableDragSeek: true));
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        YoutubePlayer(
-          aspectRatio: 9 / 16,
-          controller: _videocontroller,
-          showVideoProgressIndicator: true,
-          bottomActions: [
-            CurrentPosition(),
-            ProgressBar(
-              isExpanded: true,
-              colors: const ProgressBarColors(
-                  playedColor: Colors.blue, handleColor: Colors.blueAccent),
-            )
-          ],
+        Container(
+          alignment: Alignment.center,
+          child: Transform.scale(
+            scale: 1.75,
+            child: Transform.rotate(
+                   angle: pi/180*90,
+              child: YoutubePlayer(
+                aspectRatio: 16 / 9,
+                controller: _videocontroller,
+                showVideoProgressIndicator: false,
+                bottomActions: [
+                  CurrentPosition(),
+                  ProgressBar(
+                    isExpanded: true,
+                    colors: const ProgressBarColors(
+                        playedColor: Colors.blue, handleColor: Colors.blueAccent),
+                  )
+                ],
+              ),
+            ),
+          ),
         ),
         Positioned(
             right: 20,

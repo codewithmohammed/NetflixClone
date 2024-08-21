@@ -14,42 +14,36 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     // });
     on<HomeFetchMoviesEvent>(_getHomeMovies);
   }
-  
+
   void _getHomeMovies(
       HomeFetchMoviesEvent event, Emitter<HomeState> emit) async {
     emit(HomeLoading());
     try {
-         final firsthomeMovie = await homeMovieRepository.getmoviesfor(
-          'results', ApiClient.searchMovies);
+      final firsthomeMovie = await homeMovieRepository.getmoviesfor(
+          'results', ApiClient.searchMovies);    print('hellllo');
       final secondhomeMovie = await homeMovieRepository.getmoviesfor(
-          'results', ApiClient.downloadPageUrl);
-      // final thirdhomeMovie = await homeMovieRepository.getmoviesfor(
-      //     'newandhot', ApiClient.newandhot);
+          'results', ApiClient.downloadPageUrl);    print('hellllo');
       final fourthhomeMovie = await homeMovieRepository.getmoviesfor(
-          'results', ApiClient.newandhot2);
+          'results', ApiClient.newandhot2);    print('hellllo');
       final fifthhomeMovie = await homeMovieRepository.getmoviesfor(
           'results', ApiClient.homeMovie1);
-      // final sixthhomeMovie = await homeMovieRepository.getmoviesfor(
-      //     'toprated', ApiClient.topRatedTvSeriesUrl);
-
+      print('hellllo');
       emit(HomeMovieSuccess(
-          firstMovieModel: firsthomeMovie,
-          secondMovieModel: secondhomeMovie,
-          // thirdMovieModel: thirdhomeMovie,
-          fourthMovieModel: fourthhomeMovie,
-          fifthMovieModel: fifthhomeMovie,
-          // sixthMovieModel: sixthhomeMovie
-          ));
+        firstMovieModel: firsthomeMovie,
+        secondMovieModel: secondhomeMovie,
+        fourthMovieModel: fourthhomeMovie,
+        fifthMovieModel: fifthhomeMovie,
+      ));
     } catch (e) {
       emit(HomeMovieFailure(e.toString()));
     }
   }
 }
 
-
-class ScrollBloc extends Bloc<ScrollEvent,ScrollState>{
+class ScrollBloc extends Bloc<ScrollEvent, ScrollState> {
   ScrollBloc() : super(ScrollInitial()) {
     on<ScrollSetOffset>((event, emit) {
       emit(ScrollOffsetChanged(event.offset));
     });
-  }}
+  }
+}

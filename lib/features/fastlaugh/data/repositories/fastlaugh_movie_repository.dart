@@ -25,20 +25,19 @@ class FastLaughMovieRepository {
       final fastLaughMovieData =
           await fastLaughMovieProvider.getFastLaughMovieTrailers(movieID);
       final decodedData = json.decode(fastLaughMovieData)['results'] as List;
+     
       // print(decodedData);
-      // final List<dynamic> offiicialTrailer = decodedData.firstWhere(
-      //     (element) => element['name'] == 'Official Trailer',
-      //     orElse: () => null);
-      // print(offiicialTrailer.toString());
-
       final listOfTrailerModel = decodedData
           .map((movie) => FastLaughMovieTrailerModel.fromJson(movie))
           .toList();
+//       print(listOfTrailerModel);
+//  if (listOfTrailerModel.isEmpty) {
+//         print(true);
+//       }
+      final trailerModel = listOfTrailerModel.isNotEmpty ? listOfTrailerModel.firstWhere((element) =>
+          element.name == 'Official Trailer' || element.type == 'Trailer') : FastLaughMovieTrailerModel(key: 'M7QBdqrBKOE', type: 'Trailer', name: 'name');
 
-      final trailerModel = listOfTrailerModel
-          .firstWhere((element) => element.name == 'Official Trailer' || element.type == 'Trailer');
-
-      print(trailerModel);
+      // print(trailerModel);
 
       return trailerModel;
     } catch (e) {

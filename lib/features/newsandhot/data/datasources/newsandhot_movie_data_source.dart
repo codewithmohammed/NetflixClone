@@ -1,6 +1,5 @@
 
 import 'package:netflixclone/core/provider/movie_provider.dart';
-import 'package:netflixclone/infrastructure/network/api_client.dart';
 
 class NewsAndHotMovieProvider {
   Future<String> getNewsAndHotMovies(String movieURL) async {

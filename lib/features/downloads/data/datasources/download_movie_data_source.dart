@@ -11,13 +11,3 @@ class DownloadMovieProvider {
     }
   }
 }
-
-// Future<List<MovieModel>> getdownloadMovies() async {
-//   final response = await http.get(Uri.parse(ApiClient.nowPlayingUrl));
-//   if (response.statusCode == 200) {
-//     final decodedData = json.decode(response.body)['downloadimages'] as List;
-//     return decodedData.map((movie) => MovieModel.fromJson(movie)).toList();
-//   } else {
-//     throw Exception('Something Happend');
-//   }
-// }

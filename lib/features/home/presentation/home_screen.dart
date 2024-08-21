@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflixclone/features/home/presentation/bloc/home_bloc.dart';
 import 'package:netflixclone/features/home/presentation/widgets/content_header.dart';
 import 'package:netflixclone/features/home/presentation/widgets/content_widget.dart';
 import 'package:netflixclone/features/home/presentation/widgets/home_customappbar.dart';
 
 import 'package:netflixclone/utils/colors/colors.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'widgets/previews.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,14 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
           return Text(state.error);
         }
         if (state is! HomeMovieSuccess) {
-          return Container();
+          return const Text('state.error');
         }
-        return CustomScrollView(controller: scrollController,
-         slivers: [
+        return CustomScrollView(controller: scrollController, slivers: [
           const SliverToBoxAdapter(
               child: ContentHeader(
-            index: 1,
-          )),
+                  // index: 1,
+                  )),
           SliverPadding(
             padding: const EdgeInsets.only(top: 20.0),
             sliver: SliverToBoxAdapter(

@@ -64,12 +64,7 @@ class Previews extends StatelessWidget {
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter)),
                     ),
-                    // Positioned(
-                    //     left: 0,
-                    //     right: 0,
-                    //     bottom: 0,
-                    //     child: Image.network(
-                    //         'https://source.unsplash.com/random/400x400'))
+
                   ],
                 ),
               );

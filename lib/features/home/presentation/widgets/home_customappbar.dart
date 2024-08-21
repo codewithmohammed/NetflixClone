@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflixclone/core/constants/constants.dart';
 import 'package:netflixclone/features/home/presentation/widgets/appbar_button.dart';
 import 'package:netflixclone/utils/image/image_path.dart';
 

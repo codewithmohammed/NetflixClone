@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflixclone/core/constants/constants.dart';
@@ -7,10 +8,10 @@ import 'package:netflixclone/features/home/presentation/widgets/verical_icon_but
 class ContentHeader extends StatelessWidget {
   const ContentHeader({
     super.key,
-    required this.index,
+    // required this.index,
   });
 
-  final int index;
+  // final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,22 @@ class ContentHeader extends StatelessWidget {
             if (state is! HomeMovieSuccess) {
               return const CircularProgressIndicator.adaptive();
             }
-            final movieModel = state.firstMovieModel[index];
-            return Container(
-              height: 500,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          '${Constants.imagePath}${movieModel.posterPath}'),
-                      fit: BoxFit.cover)),
+
+            return CarouselSlider.builder(
+              options: CarouselOptions(autoPlay: true, height: 500,viewportFraction: 1.5),
+              itemBuilder: (context, index, realIndex) {
+                final movieModel = state.firstMovieModel[index];
+                return Container(
+                  height: 500,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              '${Constants.imagePath}${movieModel.backdropPath}'),
+                          fit: BoxFit.cover)),
+                );
+              },
+              itemCount: state.firstMovieModel.length,
+              // child:
             );
           },
         ),
@@ -65,14 +74,19 @@ class ContentHeader extends StatelessWidget {
             if (state is! HomeMovieSuccess) {
               return const CircularProgressIndicator.adaptive();
             }
-            final movieModel = state.firstMovieModel[index];
-            return Positioned(
-                bottom: 110,
-                child: SizedBox(
-                  width: 250,
-                  child: Image.network(
-                      '${Constants.imagePath}${movieModel.posterPath}'),
-                ));
+            // final movieModel = state.firstMovieModel[1];
+            return CarouselSlider.builder(
+              itemCount: state.fifthMovieModel.length,
+                options: CarouselOptions(autoPlay: true, aspectRatio: 13 / 15),
+                itemBuilder: (context, index, realIndex) {
+                  final movieModel = state.firstMovieModel[index];
+
+                  return SizedBox(
+                    width: 250,
+                    child: Image.network(
+                        '${Constants.imagePath}${movieModel.posterPath}'),
+                  );
+                });
           },
         ),
         Positioned(

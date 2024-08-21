@@ -18,12 +18,12 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
       final fastLaughMovie =
           await fastLaughMovieRepository.getFastLaughMovies();
 
-      print(fastLaughMovie[4].id);
+      // print(fastLaughMovie[4].id);
       final List<FastLaughMovieTrailerModel> trailerModelList =
           await _getAllTheTrailers(fastLaughMovie);
 
       // print(fastLaughMovie.length);
-      print(trailerModelList.length);
+      // print(trailerModelList.length);
       //  await Future.delayed(Duration(seconds: 5));
 
       // print(trailerModelList.length);
@@ -54,6 +54,7 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
       final trailerInstance =
           await fastLaughMovieRepository.getFastLaughMovieTrailer(model.id);
       trailerModelList.add(trailerInstance);
+      print(trailerInstance.name);
     }
     return trailerModelList;
   }

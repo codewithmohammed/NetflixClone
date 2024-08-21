@@ -1,6 +1,3 @@
-
-
-
 class ApiClient {
   // final String baseUrl;
   // final String apiKey;
